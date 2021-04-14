@@ -9,5 +9,17 @@ const factorial = (n) => {
   else return n * factorial(n - 1);
 };
 
-console.log(factorial(5));
-console.log(factorial(12));
+/*
+  Find sum of elements of an array without using loop. It uses recursion (divide n conquer rule).
+*/
+function sumWithoutLoop(array) {
+  if (array.length === 1) {
+    return array[0];
+  } else {
+    let elem = array.shift(); // returns first element of array and removes it from array too
+    return elem + sumWithoutLoop(array);
+  }
+}
+
+console.log('Factorial: ', factorial(12));
+console.log('Sum without loop: ', sumWithoutLoop([9, 1, 3, 2]));
